@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For You Lorraine</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #fff1f3, #ffe4e6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .container {
+        background: #ffffff;
+        width: 90%;
+        max-width: 360px;
+        padding: 30px 25px;
+        border-radius: 24px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        animation: fadeIn 0.9s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      img.main-gif {
+        max-width: 220px;
+        border-radius: 18px;
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        color: #c62828;
+        margin: 15px 0 10px;
+        line-height: 1.4;
+      }
+
+      p {
+        color: #666;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+      }
+
+      .reveal-btn {
+        margin-top: 10px;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 999px;
+        background: #ffcdd2;
+        color: #b71c1c;
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+      }
+
+      .reveal-btn:hover {
+        background: #ef9a9a;
+        transform: scale(1.05);
+      }
+
+      .hidden-photo {
+        display: none;
+        margin-top: 20px;
+      }
+
+      .hidden-photo img {
+        width: 100%;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .next {
+        margin-top: 25px;
+        padding: 12px 26px;
+        border: none;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #e53935, #d81b60);
+        color: white;
+        cursor: pointer;
+        font-size: 0.9rem;
+        box-shadow: 0 10px 20px rgba(216, 27, 96, 0.4);
+      }
+
+      .next:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+        class="main-gif"
+        src="https://media.tenor.com/IMxQ6Pil13cAAAAM/anyealator-sad-dog.gif"
+        alt="sad dog"
+      />
+
+      <h2>Oh? May ka-date ka?! 💔</h2>
+      <p>So sad… look at me oh 😔 <br /></p>
+
+      <button class="reveal-btn" onclick="showPicture()">Look at me 🐶</button>
+
+      <div class="hidden-photo" id="photo">
+        <img src="paw.jpg" alt="paw photo" />
+      </div>
+
+      <button class="next" onclick="window.location.href = 'wonder.html'">
+        ← Back
+      </button>
+    </div>
+
+    <script>
+      function showPicture() {
+        document.getElementById("photo").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

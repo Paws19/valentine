@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question?</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #fcff5b, #fff6a5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Segoe UI", sans-serif;
+        transition: opacity 0.8s ease;
+      }
+
+      body.fade-out {
+        opacity: 0;
+      }
+
+      .card {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        width: 90%;
+        max-width: 380px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        color: #c62828;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #444;
+        margin-bottom: 25px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      button {
+        padding: 10px 22px;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .yes {
+        background-color: #e0e0e0;
+        color: #333;
+      }
+
+      .no {
+        background-color: #e0e0e0;
+        color: #333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1>Question</h1>
+      <p>How are you today? Everything all right?</p>
+
+      <div class="buttons">
+        <button class="yes" onclick="showGift()">Yes</button>
+        <button class="no" onclick="ShowNoGift()">No</button>
+      </div>
+    </div>
+
+    <script>
+      function showGift() {
+        document.body.classList.add("fade-out");
+
+        // Go to new HTML (same tab)
+        setTimeout(() => {
+          window.location.href = "gif.html";
+        }, 800);
+      }
+
+      function ShowNoGift() {
+        document.body.classList.add("fade-out");
+
+        // Go to new HTML (same tab)
+        setTimeout(() => {
+          window.location.href = "gifdattwo.html";
+        }, 800);
+      }
+    </script>
+  </body>
+</html>

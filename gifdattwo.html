@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For You, Lorraine</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #fff5f5, #ffecec);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .container {
+        text-align: center;
+        padding: 20px;
+      }
+      img {
+        max-width: 240px;
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      h2 {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #c62828;
+        line-height: 1.4;
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 15px;
+        color: #666;
+      }
+
+      .buttons {
+        margin-top: 18px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 10px 22px;
+        border-radius: 25px;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact {
+        background-color: #e1306c;
+        color: white;
+      }
+
+      .next {
+        background-color: #f2f2f2;
+        color: #444;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+        src="https://media1.tenor.com/m/H9D8yy9LYZcAAAAC/are-you-okay-are-u-ok.gif"
+        alt="Are you okay?"
+      />
+
+      <h2>I noticed you said youre not okay. Thats completely okay.</h2>
+
+      <p>
+        If you ever feel like talking, Im here to listen no pressure at all.
+        Please dont hesitate to reach out. Youre not alone, Lor.
+      </p>
+
+      <p><strong>I care about you. Always.</strong></p>
+
+      <p>Your tiktok friend.</p>
+
+      <div class="buttons">
+        <a
+          class="btn contact"
+          href="https://www.tiktok.com/@fanboi_12?is_from_webapp=1&sender_device=pc"
+          target="_blank"
+        >
+          Contact Me
+        </a>
+
+        <button class="btn next" onclick="ifClickNext()">Next</button>
+      </div>
+    </div>
+
+    <script>
+      function ifClickNext() {
+        const goNext = confirm(
+          "Are you sure you want to continue?\n\nIf you change your mind, you can always contact me. I care about you, Lor 💖",
+        );
+
+        if (goNext) {
+          // YES → go to next page
+          window.location.href = "next.html";
+        } else {
+          // NO → stay here (or you can highlight the contact button)
+          console.log("User chose to stay");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For You Lorraine</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #fff1f3, #ffe4e6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .container {
+        background: #ffffff;
+        max-width: 360px;
+        width: 90%;
+        padding: 30px 25px;
+        border-radius: 24px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        animation: fadeIn 1s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      img {
+        max-width: 200px;
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        margin: 10px 0;
+        color: #c62828;
+        font-size: 1.4rem;
+      }
+
+      p {
+        color: #666;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+      }
+
+      .choices {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 25px;
+      }
+
+      .choices button {
+        padding: 12px;
+        border-radius: 12px;
+        border: 2px solid #ffcdd2;
+        background: #fff;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .choices button:hover {
+        background: #ffcdd2;
+        transform: translateY(-2px);
+      }
+
+      .choices button.active {
+        background: #e57373;
+        color: white;
+        border-color: #e57373;
+      }
+
+      .next {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #e53935, #d81b60);
+        color: #fff;
+        font-size: 0.95rem;
+        cursor: pointer;
+        box-shadow: 0 10px 20px rgba(216, 27, 96, 0.4);
+        transition: transform 0.3s ease;
+      }
+
+      .next:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+        src="https://media.tenor.com/Wr7H5USj1GcAAAAi/pengu-pudgy.gif"
+        alt="cute gif"
+      />
+
+      <h2>What will you do this Valentine’s?</h2>
+      <p>Just curious, no pressure 💗</p>
+
+      <div class="choices">
+        <button onclick="showGalaGift()">Gala with tropa</button>
+        <button onclick="showDate()">Date</button>
+        <button onclick="showNotSure()">Not sure yet</button>
+      </div>
+
+      <button class="next" onclick="window.location.href = 'index.html'">
+        ← Back
+      </button>
+    </div>
+
+    <script>
+      function showGalaGift() {
+        window.location.href = "gala.html";
+      }
+      function selectChoice(btn) {
+        document
+          .querySelectorAll(".choices button")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+      }
+      function showDate() {
+        window.location.href = "date.html";
+      }
+
+      function showNotSure() {
+        window.location.href = "not_sure.html";
+      }
+    </script>
+  </body>
+</html>
