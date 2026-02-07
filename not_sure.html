@@ -126,16 +126,22 @@
           alt="paw photo"
         />
       </div>
+      <br />
 
       <button class="next" onclick="window.location.href = 'wonder.html'">
         ← Back
       </button>
-      <button>Next →</button>
+      <br />
+      <button onclick="nextPage()">Next →</button>
     </div>
 
     <script>
       function showPicture() {
         document.getElementById("photo").style.display = "block";
+      }
+
+      function nextPage() {
+        window.location.href = "another_question.html";
       }
     </script>
   </body>

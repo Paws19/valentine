@@ -7,7 +7,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: linear-gradient(135deg, #fff1f3, #ffe4e6);
   position: relative;
   overflow: hidden;
   transition: opacity 1.2s ease;
