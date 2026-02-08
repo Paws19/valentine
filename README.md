@@ -1,3 +1,3 @@
 # valentine
 
-# This project that shows my effort even we are not together anymore. I want to show my pure intentions to her. I want to see her reaction if im still has a chance
+# This project shows my effort even though we are no longer together. I want to express my pure intentions to her and see her reaction—to know if there is still a chance for me

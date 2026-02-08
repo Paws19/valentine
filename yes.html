@@ -49,12 +49,11 @@
         }
       }
 
-      img {
+      .main-gif {
         width: 100%;
-        max-width: 220px;
+        max-width: 200px;
         border-radius: 24px;
-        margin-bottom: 16px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        margin-bottom: 14px;
         animation: bounce 3s ease-in-out infinite;
       }
 
@@ -64,38 +63,51 @@
           transform: translateY(0);
         }
         50% {
-          transform: translateY(-6px);
+          transform: translateY(-8px);
         }
       }
 
       h2 {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         color: #c2185b;
-        margin-bottom: 8px;
-        font-weight: 500;
+        margin: 12px 0 20px;
+        line-height: 1.5;
+        font-weight: 400;
       }
 
-      p {
-        color: #666;
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-      }
-
+      /* Next/back buttons */
       .next-btn {
         width: 100%;
         padding: 12px;
-        border-radius: 999px;
+        margin-bottom: 12px;
         border: none;
-        background: linear-gradient(135deg, #ec407a, #d81b60);
-        color: white;
+        border-radius: 999px;
+        font-weight: 500;
         font-size: 0.9rem;
         cursor: pointer;
-        box-shadow: 0 10px 20px rgba(216, 27, 96, 0.3);
-        transition: transform 0.3s ease;
+        transition: all 0.25s ease;
       }
 
-      .next-btn:hover {
+      .next {
+        background: linear-gradient(135deg, #ec407a, #d81b60);
+        color: white;
+        box-shadow: 0 10px 18px rgba(216, 27, 96, 0.35);
+      }
+
+      .back {
+        background: #fce4ec;
+        color: #ad1457;
+      }
+
+      .next:hover,
+      .back:hover {
         transform: scale(1.05);
+      }
+
+      @media (max-width: 360px) {
+        h2 {
+          font-size: 0.95rem;
+        }
       }
     </style>
   </head>
@@ -103,13 +115,24 @@
   <body>
     <div class="container">
       <img
-        src="https://media.tenor.com/aXfGVH4NK6IAAAAM/clari.gif"
-        alt="cute gif"
+        class="main-gif"
+        src="https://media1.tenor.com/m/y8cgJITHm9gAAAAd/yang-was-right-iwas-right.gif"
+        alt="happy gif"
       />
-      <h2>Thank you for answering honestly 💖</h2>
-      <p>I appreciate you. Always.</p>
 
-      <button class="next-btn" onclick="window.location.href = 'wonder.html'">
+      <h2>Diba! Tama HAHAHAHA.<br />Sige, study well ng mabuti!</h2>
+
+      <button
+        class="next-btn back"
+        onclick="window.location.href = 'curious.html'"
+      >
+        ← Back
+      </button>
+
+      <button
+        class="next-btn next"
+        onclick="window.location.href = 'curious_2.html'"
+      >
         Next →
       </button>
     </div>

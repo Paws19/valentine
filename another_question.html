@@ -132,12 +132,17 @@
         ← Back
       </button>
       <br />
-      <button>Next →</button>
+
+      <button class="next" onclick="nextPage()">Next →</button>
     </div>
 
     <script>
       function showPicture() {
         document.getElementById("photo").style.display = "block";
+      }
+
+      function nextPage() {
+        window.location.href = "curious.html";
       }
     </script>
   </body>

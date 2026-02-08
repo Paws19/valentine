@@ -8,41 +8,66 @@
     <style>
       body {
         margin: 0;
-        height: 100vh;
-        background: linear-gradient(135deg, #fff5f5, #ffecec);
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fff1f3, #ffecec);
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: "Segoe UI", sans-serif;
+        padding: 16px;
       }
 
       .container {
+        background: #fff;
+        width: 100%;
+        max-width: 360px;
+        padding: 28px 22px;
+        border-radius: 28px;
         text-align: center;
-        padding: 20px;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+        animation: fadeIn 0.8s ease;
       }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(18px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
       img {
         max-width: 240px;
         width: 100%;
         border-radius: 20px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        margin-bottom: 18px;
+        transition: transform 0.3s ease;
+      }
+
+      img:hover {
+        transform: scale(1.05);
       }
 
       h2 {
-        margin-top: 20px;
-        font-size: 18px;
-        font-weight: 600;
-        color: #c62828;
+        font-size: 1.15rem;
+        font-weight: 500;
+        color: #c2185b;
+        margin-bottom: 12px;
         line-height: 1.4;
       }
 
       p {
-        margin-top: 10px;
-        font-size: 15px;
-        color: #666;
+        font-size: 0.95rem;
+        color: #555;
+        margin: 6px 0;
       }
 
       .buttons {
-        margin-top: 18px;
+        margin-top: 20px;
         display: flex;
         justify-content: center;
         gap: 12px;
@@ -50,15 +75,12 @@
       }
 
       .btn {
-        padding: 10px 22px;
-        border-radius: 25px;
+        padding: 12px 24px;
+        border-radius: 999px;
         border: none;
-        font-size: 14px;
+        font-size: 0.9rem;
         cursor: pointer;
-        text-decoration: none;
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease;
+        transition: all 0.25s ease;
       }
 
       .btn:hover {
@@ -67,12 +89,12 @@
       }
 
       .contact {
-        background-color: #e1306c;
+        background: linear-gradient(135deg, #ec407a, #d81b60);
         color: white;
       }
 
       .next {
-        background-color: #f2f2f2;
+        background: #f2f2f2;
         color: #444;
       }
     </style>
@@ -85,16 +107,14 @@
         alt="Are you okay?"
       />
 
-      <h2>I noticed you said youre not okay. Thats completely okay.</h2>
+      <h2>I noticed you said you're not okay. That's completely okay.</h2>
 
       <p>
-        If you ever feel like talking, Im here to listen no pressure at all.
-        Please dont hesitate to reach out. Youre not alone, Lor.
+        If you ever feel like talking, I'm here to listen no pressure at all.
       </p>
-
+      <p>Please don't hesitate to reach out. You're not alone, Lor.</p>
       <p><strong>I care about you. Always.</strong></p>
-
-      <p>Your tiktok friend.</p>
+      <p>Your TikTok friend 💖</p>
 
       <div class="buttons">
         <a
@@ -105,7 +125,7 @@
           Contact Me
         </a>
 
-        <button class="btn next" onclick="ifClickNext()">Next</button>
+        <button class="btn next" onclick="ifClickNext()">Next →</button>
       </div>
     </div>
 
@@ -116,11 +136,7 @@
         );
 
         if (goNext) {
-          // YES → go to next page
           window.location.href = "next.html";
-        } else {
-          // NO → stay here (or you can highlight the contact button)
-          console.log("User chose to stay");
         }
       }
     </script>

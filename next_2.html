@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>For You Lorraine</title>
 
-    <!-- Cute font -->
+    <!-- Soft cute font -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
 
@@ -30,7 +30,7 @@
       .container {
         background: #ffffff;
         width: 100%;
-        max-width: 340px;
+        max-width: 330px;
         padding: 28px 22px;
         border-radius: 28px;
         text-align: center;
@@ -49,53 +49,67 @@
         }
       }
 
-      img {
+      .main-gif {
         width: 100%;
-        max-width: 220px;
+        max-width: 190px;
         border-radius: 24px;
         margin-bottom: 16px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        animation: bounce 3s ease-in-out infinite;
+        animation: thinking 3s ease-in-out infinite;
       }
 
-      @keyframes bounce {
+      @keyframes thinking {
         0%,
         100% {
           transform: translateY(0);
         }
         50% {
-          transform: translateY(-6px);
+          transform: translateY(-5px);
         }
       }
 
       h2 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         color: #c2185b;
-        margin-bottom: 8px;
-        font-weight: 500;
+        margin: 8px 0 18px;
+        line-height: 1.5;
+        font-weight: 400;
       }
 
-      p {
-        color: #666;
-        font-size: 0.9rem;
-        margin-bottom: 20px;
+      .buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 22px;
       }
 
-      .next-btn {
-        width: 100%;
-        padding: 12px;
-        border-radius: 999px;
+      .btn {
+        flex: 1;
+        padding: 12px 0;
         border: none;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-back {
+        background: #fce4ec;
+        color: #ad1457;
+      }
+
+      .btn-next {
         background: linear-gradient(135deg, #ec407a, #d81b60);
         color: white;
-        font-size: 0.9rem;
-        cursor: pointer;
-        box-shadow: 0 10px 20px rgba(216, 27, 96, 0.3);
-        transition: transform 0.3s ease;
+        box-shadow: 0 10px 18px rgba(216, 27, 96, 0.35);
       }
 
-      .next-btn:hover {
-        transform: scale(1.05);
+      .btn:hover {
+        transform: scale(1.06);
+      }
+
+      @media (max-width: 360px) {
+        h2 {
+          font-size: 1rem;
+        }
       }
     </style>
   </head>
@@ -103,15 +117,29 @@
   <body>
     <div class="container">
       <img
-        src="https://media.tenor.com/aXfGVH4NK6IAAAAM/clari.gif"
-        alt="cute gif"
+        class="main-gif"
+        src="https://media.tenor.com/8iZAUyXf9zEAAAAi/uhmm.gif"
+        alt="thinking gif"
       />
-      <h2>Thank you for answering honestly 💖</h2>
-      <p>I appreciate you. Always.</p>
 
-      <button class="next-btn" onclick="window.location.href = 'wonder.html'">
-        Next →
-      </button>
+      <h2>Eto kasi ’yun…</h2>
+
+      <div class="buttons">
+        <button
+          class="btn btn-back"
+          onclick="window.location.href = 'yes_2.html'"
+        >
+          ← Back
+        </button>
+
+        <button class="btn btn-next" onclick="nextPage()">Next →</button>
+      </div>
     </div>
+
+    <script>
+      function nextPage() {
+        window.location.href = "shy.html";
+      }
+    </script>
   </body>
 </html>

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>For You Lorraine</title>
 
+    <!-- Cute font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       * {
         box-sizing: border-box;
@@ -12,95 +18,130 @@
 
       body {
         margin: 0;
-        height: 100vh;
+        min-height: 100vh;
         background: linear-gradient(135deg, #fff1f3, #ffe4e6);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: "Segoe UI", sans-serif;
+        font-family: "Poppins", sans-serif;
+        padding: 16px;
       }
 
       .container {
         background: #ffffff;
-        max-width: 360px;
-        width: 90%;
-        padding: 30px 25px;
-        border-radius: 24px;
+        width: 100%;
+        max-width: 340px;
+        padding: 28px 22px;
+        border-radius: 28px;
         text-align: center;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        animation: fadeIn 1s ease;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+        animation: fadeIn 0.7s ease;
       }
 
       @keyframes fadeIn {
         from {
           opacity: 0;
-          transform: translateY(20px);
+          transform: translateY(18px) scale(0.96);
         }
         to {
           opacity: 1;
-          transform: translateY(0);
+          transform: translateY(0) scale(1);
         }
       }
 
-      img {
+      .main-gif {
+        width: 100%;
         max-width: 200px;
-        margin-bottom: 15px;
+        border-radius: 24px;
+        margin-bottom: 14px;
+        animation: bounce 3s ease-in-out infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
       }
 
       h2 {
-        margin: 10px 0;
-        color: #c62828;
-        font-size: 1.4rem;
+        font-size: 1.05rem;
+        color: #c2185b;
+        margin: 12px 0 6px;
+        line-height: 1.5;
+        font-weight: 500;
       }
 
       p {
         color: #666;
-        font-size: 0.95rem;
-        margin-bottom: 20px;
+        font-size: 0.9rem;
+        margin-bottom: 18px;
       }
 
       .choices {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        margin-bottom: 25px;
+        margin-bottom: 22px;
       }
 
-      .choices button {
+      .choice-btn {
         padding: 12px;
-        border-radius: 12px;
-        border: 2px solid #ffcdd2;
-        background: #fff;
-        font-size: 0.95rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .choices button:hover {
-        background: #ffcdd2;
-        transform: translateY(-2px);
-      }
-
-      .choices button.active {
-        background: #e57373;
-        color: white;
-        border-color: #e57373;
-      }
-
-      .next {
-        padding: 12px 24px;
-        border: none;
         border-radius: 999px;
-        background: linear-gradient(135deg, #e53935, #d81b60);
-        color: #fff;
-        font-size: 0.95rem;
+        border: none;
+        font-size: 0.9rem;
+        font-weight: 500;
         cursor: pointer;
-        box-shadow: 0 10px 20px rgba(216, 27, 96, 0.4);
-        transition: transform 0.3s ease;
+        transition: all 0.25s ease;
       }
 
-      .next:hover {
+      .choice-btn.gala {
+        background: #fce4ec;
+        color: #ad1457;
+      }
+      .choice-btn.date {
+        background: linear-gradient(135deg, #ec407a, #d81b60);
+        color: #fff;
+        box-shadow: 0 8px 16px rgba(216, 27, 96, 0.25);
+      }
+      .choice-btn.not-sure {
+        background: #ffe0e6;
+        color: #c2185b;
+      }
+
+      .choice-btn:hover {
         transform: scale(1.05);
+      }
+
+      .next-btn {
+        width: 100%;
+        padding: 12px;
+        border-radius: 999px;
+        border: none;
+        background: #eee;
+        color: #666;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition:
+          background 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .next-btn:hover {
+        background: #e0e0e0;
+        transform: scale(1.03);
+      }
+
+      @media (max-width: 360px) {
+        h2 {
+          font-size: 0.95rem;
+        }
+        p {
+          font-size: 0.85rem;
+        }
       }
     </style>
   </head>
@@ -108,6 +149,7 @@
   <body>
     <div class="container">
       <img
+        class="main-gif"
         src="https://media.tenor.com/Wr7H5USj1GcAAAAi/pengu-pudgy.gif"
         alt="cute gif"
       />
@@ -116,31 +158,28 @@
       <p>Just curious, no pressure 💗</p>
 
       <div class="choices">
-        <button onclick="showGalaGift()">Gala with tropa</button>
-        <button onclick="showDate()">Date</button>
-        <button onclick="showNotSure()">Not sure yet</button>
+        <button class="choice-btn gala" onclick="goGala()">
+          Gala with tropa 😎
+        </button>
+        <button class="choice-btn gala" onclick="goDate()">Date 🥰</button>
+        <button class="choice-btn not-sure" onclick="goNotSure()">
+          Not sure yet 🤔
+        </button>
       </div>
 
-      <button class="next" onclick="window.location.href = 'index.html'">
+      <button class="next-btn" onclick="window.location.href = 'gif.html'">
         ← Back
       </button>
     </div>
 
     <script>
-      function showGalaGift() {
+      function goGala() {
         window.location.href = "gala.html";
       }
-      function selectChoice(btn) {
-        document
-          .querySelectorAll(".choices button")
-          .forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-      }
-      function showDate() {
+      function goDate() {
         window.location.href = "date.html";
       }
-
-      function showNotSure() {
+      function goNotSure() {
         window.location.href = "not_sure.html";
       }
     </script>

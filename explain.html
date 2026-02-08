@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For You Lorraine</title>
+
+    <!-- Cute font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fff1f3, #ffe4e6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Poppins", sans-serif;
+        padding: 16px;
+      }
+
+      .container {
+        background: #ffffff;
+        width: 100%;
+        max-width: 360px;
+        padding: 28px 22px;
+        border-radius: 26px;
+        text-align: center;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+        animation: fadeIn 0.8s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px) scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .main-gif {
+        width: 100%;
+        max-width: 210px;
+        border-radius: 22px;
+        margin-bottom: 14px;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        color: #c2185b;
+        margin: 12px 0 16px;
+        line-height: 1.55;
+        font-weight: 400;
+      }
+
+      .hidden-photo {
+        display: none;
+        margin-top: 18px;
+        animation: popIn 0.4s ease;
+      }
+
+      @keyframes popIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .hidden-photo img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .btn {
+        flex: 1;
+        padding: 12px 0;
+        border: none;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-back {
+        background: #fce4ec;
+        color: #ad1457;
+      }
+
+      .btn-next {
+        background: linear-gradient(135deg, #ec407a, #d81b60);
+        color: #ffffff;
+        box-shadow: 0 10px 18px rgba(216, 27, 96, 0.35);
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 360px) {
+        h2 {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+        class="main-gif"
+        src="https://media1.tenor.com/m/atLhSPxHlo4AAAAC/well-ya.gif"
+        alt="cute dog"
+      />
+
+      <h2>
+        Diba, mag-va-Valentine na. Di ko alam if tama pa ba tong ginagawa ko,
+        pero gusto ko iparamdam sa’yo kung gaano ka special sa’kin even though
+        di na tayo nag-uusap palagi.
+      </h2>
+
+      <div class="hidden-photo" id="photo">
+        <img
+          src="https://media.tenor.com/JwP63tDxTfMAAAAi/teehee-smile.gif"
+          alt="cute smile"
+        />
+      </div>
+
+      <div class="buttons">
+        <button
+          class="btn btn-back"
+          onclick="window.location.href = 'shy.html'"
+        >
+          ← Back
+        </button>
+
+        <button class="btn btn-next" onclick="nextPage()">Next →</button>
+      </div>
+    </div>
+
+    <script>
+      function showPicture() {
+        document.getElementById("photo").style.display = "block";
+      }
+
+      function nextPage() {
+        window.location.href = "explain_2.html";
+      }
+    </script>
+  </body>
+</html>

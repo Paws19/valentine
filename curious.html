@@ -49,12 +49,11 @@
         }
       }
 
-      img {
+      .main-gif {
         width: 100%;
-        max-width: 220px;
+        max-width: 200px;
         border-radius: 24px;
-        margin-bottom: 16px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        margin-bottom: 14px;
         animation: bounce 3s ease-in-out infinite;
       }
 
@@ -64,38 +63,71 @@
           transform: translateY(0);
         }
         50% {
-          transform: translateY(-6px);
+          transform: translateY(-8px);
         }
       }
 
       h2 {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         color: #c2185b;
-        margin-bottom: 8px;
-        font-weight: 500;
+        margin: 12px 0 20px;
+        line-height: 1.5;
+        font-weight: 400;
       }
 
-      p {
-        color: #666;
-        font-size: 0.9rem;
-        margin-bottom: 20px;
+      /* Choice buttons */
+      .choices {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 22px;
       }
 
-      .next-btn {
-        width: 100%;
+      .choice-btn {
         padding: 12px;
-        border-radius: 999px;
         border: none;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .yes {
         background: linear-gradient(135deg, #ec407a, #d81b60);
         color: white;
-        font-size: 0.9rem;
-        cursor: pointer;
-        box-shadow: 0 10px 20px rgba(216, 27, 96, 0.3);
-        transition: transform 0.3s ease;
+        box-shadow: 0 10px 18px rgba(216, 27, 96, 0.35);
       }
 
-      .next-btn:hover {
-        transform: scale(1.05);
+      .no {
+        background: #fce4ec;
+        color: #ad1457;
+      }
+
+      .choice-btn:hover {
+        transform: scale(1.06);
+      }
+
+      .back {
+        margin-top: 6px;
+        padding: 10px 0;
+        border: none;
+        border-radius: 999px;
+        width: 100%;
+        background: #eee;
+        color: #666;
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+
+      .back:hover {
+        background: #e0e0e0;
+      }
+
+      @media (max-width: 360px) {
+        h2 {
+          font-size: 0.95rem;
+        }
       }
     </style>
   </head>
@@ -103,15 +135,31 @@
   <body>
     <div class="container">
       <img
-        src="https://media.tenor.com/aXfGVH4NK6IAAAAM/clari.gif"
-        alt="cute gif"
+        class="main-gif"
+        src="https://media.tenor.com/BB3sZELhyQgAAAAi/ermm-hmmm.gif"
+        alt="thinking gif"
       />
-      <h2>Thank you for answering honestly 💖</h2>
-      <p>I appreciate you. Always.</p>
 
-      <button class="next-btn" onclick="window.location.href = 'wonder.html'">
-        Next →
+      <h2>Since sabado yung Valentine,<br />feeling ko mag-aaral ka?</h2>
+
+      <div class="choices">
+        <button class="choice-btn no" onclick="No()">No 😌</button>
+        <button class="choice-btn yes" onclick="Yes()">Yes 😳</button>
+      </div>
+
+      <button class="back" onclick="window.location.href = 'wonder.html'">
+        ← Back
       </button>
     </div>
+
+    <script>
+      function Yes() {
+        window.location.href = "yes.html";
+      }
+
+      function No() {
+        window.location.href = "no.html";
+      }
+    </script>
   </body>
 </html>
